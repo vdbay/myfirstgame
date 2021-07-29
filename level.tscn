@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/PH_Metallic_Red.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/palyer.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 15, 2, 15 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 5.88187, 5.92765, 4.86994 )
+target = NodePath("../PH_Metallic_Red/Spatial")
+enabled = true
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+use_collision = true
+mesh = SubResource( 2 )
+
+[node name="PH_Metallic_Red" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Spatial" type="Spatial" parent="PH_Metallic_Red"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, -5 )
