@@ -1,29 +1,36 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/PH_Metallic_Red.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/palyer.gd" type="Script" id=2]
+[ext_resource path="res://assets/car.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/jalan.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 1, 0, 0, 1 )
+albedo_color = Color( 0.12549, 1, 0, 1 )
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
-size = Vector3( 15, 2, 15 )
+size = Vector3( 1000, 2, 1000 )
 
 [node name="Spatial" type="Spatial"]
 
-[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 5.88187, 5.92765, 4.86994 )
-target = NodePath("../PH_Metallic_Red/Spatial")
-enabled = true
-
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+visible = false
 use_collision = true
 mesh = SubResource( 2 )
 
-[node name="PH_Metallic_Red" parent="." instance=ExtResource( 1 )]
+[node name="car" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.635526, 0, 0.77208, 0, 1, 0, -0.77208, 0, 0.635526, 30.1451, 0, 154.704 )
 script = ExtResource( 2 )
 
-[node name="Spatial" type="Spatial" parent="PH_Metallic_Red"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, -5 )
+[node name="Spatial" type="Spatial" parent="car"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 0.635526, 0, 0.77208, 0, 1, 0, -0.77208, 0, 0.635526, 37.8659, 5, 161.059 )
+target = NodePath("../car/Spatial")
+speed = 2.0
+enabled = true
+
+[node name="jalan" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499573, -0.3, 0.419037 )
