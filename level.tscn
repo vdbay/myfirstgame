@@ -1,10 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://assets/jalan.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/rumah/apart1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/rumah/rumahputih.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/rumah/ice.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/rumah/apart2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/rumah/bengkel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/rumah/pizzatoko.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/rumah/sushi.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/rumah/pohon1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/rumah/pohon2.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.12549, 1, 0, 1 )
@@ -16,8 +23,7 @@ size = Vector3( 1000, 2, 1000 )
 [node name="Spatial" type="Spatial"]
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02, 0 )
 use_collision = true
 mesh = SubResource( 2 )
 
@@ -38,7 +44,28 @@ enabled = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499573, -0.3, 0.419037 )
 
 [node name="rumahputih" parent="." instance=ExtResource( 5 )]
-transform = Transform( 2.86788, 0, 4.09576, 0, 5, 0, -4.09576, 0, 2.86788, 24.0004, 2, 161.305 )
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 29.6502, 2, 166.504 )
 
 [node name="apart1" parent="." instance=ExtResource( 4 )]
-transform = Transform( 2.86788, 0, 4.09576, 0, 5, 0, -4.09576, 0, 2.86788, 96.2275, 5, 212.604 )
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 96.4638, 4.99999, 212.609 )
+
+[node name="ice" parent="." instance=ExtResource( 6 )]
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 0, 5.4, 146.013 )
+
+[node name="pohon1" parent="." instance=ExtResource( 11 )]
+transform = Transform( -2.84446, 0, -4.11205, 0, 5, 0, 4.11205, 0, -2.84446, 41.0644, 4.99999, 227.5 )
+
+[node name="pizzatoko" parent="." instance=ExtResource( 9 )]
+transform = Transform( -2.84446, 0, -4.11205, 0, 5, 0, 4.11205, 0, -2.84446, 41.0644, 4.99999, 190.341 )
+
+[node name="bengkel" parent="." instance=ExtResource( 8 )]
+transform = Transform( -2.93108, 0, -4.05077, 0, 5, 0, 4.05077, 0, -2.93108, 72.671, 4.4, 215.226 )
+
+[node name="apart2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 62.1325, 4.99999, 189.353 )
+
+[node name="pohon2" parent="." instance=ExtResource( 12 )]
+transform = Transform( -2.70377, 0, -4.2059, 0, 5, 0, 4.2059, 0, -2.70377, -9.83103, 1.99999, 159.014 )
+
+[node name="sushi" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.70377, 0, -4.2059, 0, 5, 0, 4.2059, 0, -2.70377, 5.66019, 4.99999, 167.931 )
