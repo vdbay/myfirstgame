@@ -5,12 +5,12 @@ extends KinematicBody
 export var gravity = -20.0
 export var wheel_base = 0.6  # distance between front/rear axles
 
-export var steering_limit = 5.0  # front wheel max turning angle (deg)
+export var steering_limit = 4.0  # front wheel max turning angle (deg)
 
-export var engine_power = 6.0
+export var engine_power = 20.0
 export var braking = -9.0
-export var friction = -2.0
-export var drag = -2.0
+export var friction = -5.0
+export var drag = -5.0
 export var max_speed_reverse = 3.0
 
 # Car state properties

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
@@ -20,6 +20,59 @@ albedo_color = Color( 0.12549, 1, 0, 1 )
 material = SubResource( 1 )
 size = Vector3( 1000, 2, 1000 )
 
+[sub_resource type="Animation" id=12]
+resource_name = "enemyanim"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10, 10.5, 13.5, 14, 24, 24.5, 27.5, 28, 38, 38.5, 41.5, 42, 52, 52.5, 55.5, 56, 66, 66.5, 69.5, 70, 80, 80.5, 83.5, 84, 94, 94.5, 97.5, 98, 108, 108.5, 111.5, 112, 120 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 75.5152, 0, 271.651 ), Vector3( -46.5594, 0, 192.199 ), Vector3( -45.949, 0, 184.834 ), Vector3( -30.1538, 0, 162.825 ), Vector3( -23.6843, 0, 162.089 ), Vector3( 91.6456, 0, 240.193 ), Vector3( 100.491, 0, 237.511 ), Vector3( 114.742, 0, 216.476 ), Vector3( 110.837, 0, 206.381 ), Vector3( -2.95138, 0, 129.775 ), Vector3( -2.40648, 0, 121.303 ), Vector3( 4.50146, 0, 109.971 ), Vector3( 14.6585, 0, 106.423 ), Vector3( 124.723, 0, 182.552 ), Vector3( 136.666, 0, 183.32 ), Vector3( 147.661, 0, 167.378 ), Vector3( 143.18, 0, 156.513 ), Vector3( 31.4345, 0, 78.3786 ), Vector3( 30.6983, 0, 70.4306 ), Vector3( 40.4695, 0, 56.3492 ), Vector3( 49.0671, 0, 55.7907 ), Vector3( 162.565, 0, 130.044 ), Vector3( 169.279, 0, 132.404 ), Vector3( 181.022, 0, 112.421 ), Vector3( 179.032, 0, 106.766 ), Vector3( 66.9705, 0, 25.9361 ), Vector3( 67.2375, 0, 17.7797 ), Vector3( 75.0252, 0, 5.30808 ), Vector3( 80.7355, 0, 2.84844 ), Vector3( 195.235, 0, 78.4204 ), Vector3( 205.318, 0, 78.6011 ), Vector3( 216.225, 0, 57.5421 ), Vector3( 214.402, 0, 51.5016 ), Vector3( 98.4594, 0, -25.8402 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10, 10.5, 13.5, 14, 24, 24.5, 27.5, 28, 38, 38.5, 41.5, 42, 52, 52.5, 55.5, 56, 66, 66.5, 69.5, 70, 80, 80.5, 83.5, 84, 94, 94.5, 97.5, 98, 108, 108.5, 111.5, 112, 120 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 56.484, 0 ), Vector3( 0, 56.484, 0 ), Vector3( 0, -33.347, 0 ), Vector3( 0, -30.6385, 0 ), Vector3( 0, -123.02, 0 ), Vector3( 0, -126.775, 0 ), Vector3( 0, -32.4153, 0 ), Vector3( 0, -32.4151, 0 ), Vector3( 0, 57.8367, 0 ), Vector3( 0, 57.6717, 0 ), Vector3( 0, -35.3845, 0 ), Vector3( 0, -31.5299, 0 ), Vector3( 0, -125.775, 0 ), Vector3( 0, -124.778, 0 ), Vector3( 0, -32.838, 0 ), Vector3( 0, -34.9897, 0 ), Vector3( 0, 50.5485, 0 ), Vector3( 0, 51.6477, 0 ), Vector3( 0, -30.6614, 0 ), Vector3( 0, -24.6514, 0 ), Vector3( 0, -130.096, 0 ), Vector3( 0, -131.472, 0 ), Vector3( 0, -34.8122, 0 ), Vector3( 0, -25.5278, 0 ), Vector3( 0, 58.9786, 0 ), Vector3( 0, 58.0191, 0 ), Vector3( 0, -32.7508, 0 ), Vector3( 0, -35.6926, 0 ), Vector3( 0, -128.753, 0 ), Vector3( 0, -124.487, 0 ), Vector3( 0, -34.1983, 0 ), Vector3( 0, -35.4643, 0 ), Vector3( 0, 51.6164, 0 ), Vector3( 0, 56.484, 0 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.321569, 0.321569, 0.321569, 1 )
+metallic = 0.54
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 300, 2, 2 )
+
+[sub_resource type="CubeMesh" id=7]
+size = Vector3( 150, 1, 2 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=8]
+size = Vector3( 30, 2, 2 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 5, 5, 5 )
+
+[sub_resource type="CubeMesh" id=10]
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0, 0.0862745, 1, 0.376471 )
+
 [node name="Spatial" type="Spatial"]
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
@@ -27,21 +80,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02, 0 )
 use_collision = true
 mesh = SubResource( 2 )
 
+[node name="car2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.599046, 0, 0.800714, 0, 1, 0, -0.800714, 0, 0.599046, 176.721, 0, 26.3655 )
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="car2"]
+autoplay = "enemyanim"
+anims/enemyanim = SubResource( 12 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 0.635526, 0, 0.77208, 0, 1, 0, -0.77208, 0, 0.635526, 83.358, 12, 277.726 )
+target = NodePath("../car/Spatial")
+speed = 2.0
+enabled = true
+
 [node name="car" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.635526, 0, 0.77208, 0, 1, 0, -0.77208, 0, 0.635526, 30.1451, 0, 154.704 )
+transform = Transform( 0.524982, 0, 0.851114, 0, 1, 0, -0.851114, 0, 0.524982, 74.0698, 0, 274.188 )
 script = ExtResource( 2 )
 
 [node name="Spatial" type="Spatial" parent="car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5 )
 
-[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
-transform = Transform( 0.635526, 0, 0.77208, 0, 1, 0, -0.77208, 0, 0.635526, 37.8659, 5, 161.059 )
-target = NodePath("../car/Spatial")
-speed = 2.0
-enabled = true
-
 [node name="jalan" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499573, -0.3, 0.419037 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0222625, -0.3, 0.419037 )
 
 [node name="rumahputih" parent="." instance=ExtResource( 5 )]
 transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 29.6502, 2, 166.504 )
@@ -69,3 +130,166 @@ transform = Transform( -2.70377, 0, -4.2059, 0, 5, 0, 4.2059, 0, -2.70377, -9.83
 
 [node name="sushi" parent="." instance=ExtResource( 10 )]
 transform = Transform( -2.70377, 0, -4.2059, 0, 5, 0, 4.2059, 0, -2.70377, 5.66019, 4.99999, 167.931 )
+
+[node name="rumahputih2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 76.339, 2, 173.665 )
+
+[node name="apart3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 9.52536, 4.99999, 127.56 )
+
+[node name="ice2" parent="." instance=ExtResource( 6 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 105.989, 5.4, 194.156 )
+
+[node name="pohon3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2.84446, 0, 4.11205, 0, 5, 0, -4.11205, 0, 2.84446, 64.9248, 4.99999, 118.747 )
+
+[node name="pizzatoko2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.78344, 0, 4.1536, 0, 5, 0, -4.1536, 0, 2.78344, 64.9248, 4.99999, 149.828 )
+
+[node name="bengkel2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 2.93108, 0, 4.05077, 0, 5, 0, -4.05077, 0, 2.93108, 33.3182, 4.4, 127.406 )
+
+[node name="apart4" parent="." instance=ExtResource( 7 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 43.8567, 4.99999, 150.816 )
+
+[node name="pohon4" parent="." instance=ExtResource( 12 )]
+transform = Transform( 2.70377, 0, 4.2059, 0, 5, 0, -4.2059, 0, 2.70377, 115.82, 1.99999, 181.155 )
+
+[node name="sushi2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 2.70377, 0, 4.2059, 0, 5, 0, -4.2059, 0, 2.70377, 96.5067, 4.99999, 172.238 )
+
+[node name="rumahputih3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 96.8517, 1.92796, 60.2437 )
+
+[node name="apart5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 163.665, 4.92795, 107.88 )
+
+[node name="ice3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 67.2015, 5.32796, 39.6852 )
+
+[node name="pohon5" parent="." instance=ExtResource( 11 )]
+transform = Transform( -2.84446, 0, -4.11205, 0, 5, 0, 4.11205, 0, -2.84446, 134.352, 4.99997, 130.174 )
+
+[node name="pizzatoko3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -2.84446, 0, -4.11205, 0, 5, 0, 4.11205, 0, -2.84446, 108.266, 4.92795, 84.0132 )
+
+[node name="bengkel3" parent="." instance=ExtResource( 8 )]
+transform = Transform( -2.93108, 0, -4.05077, 0, 5, 0, 4.05077, 0, -2.93108, 139.872, 4.32796, 107.378 )
+
+[node name="apart6" parent="." instance=ExtResource( 7 )]
+transform = Transform( 2.79596, 0, 4.14519, 0, 5, 0, -4.14519, 0, 2.79596, 129.334, 4.92795, 83.0251 )
+
+[node name="pohon6" parent="." instance=ExtResource( 12 )]
+transform = Transform( -2.70377, 0, -4.2059, 0, 5, 0, 4.2059, 0, -2.70377, 57.3704, 1.92795, 52.6862 )
+
+[node name="sushi3" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.70377, 0, -4.2059, 0, 5, 0, 4.2059, 0, -2.70377, 75.7085, 4.92794, 61.4869 )
+
+[node name="rumahputih4" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 146.787, 2, 70.3207 )
+
+[node name="apart7" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 79.9732, 4.99999, 24.2157 )
+
+[node name="ice4" parent="." instance=ExtResource( 6 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 176.437, 5.4, 90.8117 )
+
+[node name="pohon7" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2.84446, 0, 4.11205, 0, 5, 0, -4.11205, 0, 2.84446, 135.373, 4.99999, 11.1994 )
+
+[node name="pizzatoko4" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.78344, 0, 4.1536, 0, 5, 0, -4.1536, 0, 2.78344, 135.373, 4.99999, 49.915 )
+
+[node name="bengkel4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 2.93108, 0, 4.05077, 0, 5, 0, -4.05077, 0, 2.93108, 103.766, 4.4, 27.4927 )
+
+[node name="apart8" parent="." instance=ExtResource( 7 )]
+transform = Transform( -2.79596, 0, -4.14519, 0, 5, 0, 4.14519, 0, -2.79596, 114.305, 4.99999, 47.4717 )
+
+[node name="pohon8" parent="." instance=ExtResource( 12 )]
+transform = Transform( 2.70377, 0, 4.2059, 0, 5, 0, -4.2059, 0, 2.70377, 186.268, 1.99999, 82.9608 )
+
+[node name="sushi4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 2.70377, 0, 4.2059, 0, 5, 0, -4.2059, 0, 2.70377, 166.955, 4.99999, 72.325 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="."]
+transform = Transform( 0.552519, 0, 0.8335, 0, 1, 0, -0.8335, 0, 0.552519, 12.8088, 0.9445, 82.833 )
+use_collision = true
+mesh = SubResource( 4 )
+
+[node name="CSGMesh4" type="CSGMesh" parent="."]
+transform = Transform( 0.8335, 0, -0.552519, 0, 1, 0, 0.552519, 0, 0.8335, 116.788, 0.9445, -23.8727 )
+use_collision = true
+mesh = SubResource( 4 )
+
+[node name="CSGMesh5" type="CSGMesh" parent="."]
+transform = Transform( 0.8335, 0, -0.552519, 0, 1, 0, 0.552519, 0, 0.8335, -30.4186, 0.9445, 208.621 )
+use_collision = true
+mesh = SubResource( 4 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="."]
+transform = Transform( 0.552519, 0, 0.8335, 0, 1, 0, -0.8335, 0, 0.552519, 149.891, 0.9445, 175.908 )
+use_collision = true
+mesh = SubResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.928895, -0.359638, -0.0883999, 0.242479, -0.771026, 0.588832, -0.279925, 0.525528, 0.803407, 83.6757, 97.9723, 0 )
+light_color = Color( 0.945098, 1, 0.780392, 1 )
+shadow_enabled = true
+
+[node name="CSGMesh6" type="CSGMesh" parent="."]
+transform = Transform( 0.838671, 0, -0.544639, 0, 1.5, 0, 0.544639, 0, 0.838671, 20.01, 0.5, 232.118 )
+use_collision = true
+mesh = SubResource( 7 )
+material = SubResource( 6 )
+
+[node name="CSGMesh9" type="CSGMesh" parent="."]
+transform = Transform( 0.838671, 0, -0.544639, 0, 1.5, 0, 0.544639, 0, 0.838671, 70.5648, 0.5, 135.244 )
+use_collision = true
+mesh = SubResource( 7 )
+material = SubResource( 6 )
+
+[node name="CSGMesh10" type="CSGMesh" parent="."]
+transform = Transform( 0.817859, 0, -0.575419, 0, 1.5, 0, 0.575419, 0, 0.817859, 95.735, 0.5, 119.466 )
+use_collision = true
+mesh = SubResource( 7 )
+material = SubResource( 6 )
+
+[node name="CSGMesh13" type="CSGMesh" parent="."]
+transform = Transform( 0.827786, 0, -0.561044, 0, 1.5, 0, 0.561044, 0, 0.827786, 141.223, 0.5, 33.0901 )
+use_collision = true
+mesh = SubResource( 7 )
+material = SubResource( 6 )
+
+[node name="CSGMesh7" type="CSGMesh" parent="."]
+transform = Transform( 0.827835, 0, -0.560971, 0, 1, 0, 0.560971, 0, 0.827835, -12.8392, 0, 152.308 )
+use_collision = true
+mesh = SubResource( 8 )
+
+[node name="CSGMesh11" type="CSGMesh" parent="."]
+transform = Transform( 0.827835, 0, -0.560971, 0, 1, 0, 0.560971, 0, 0.827835, 58.1631, 0, 44.1137 )
+use_collision = true
+mesh = SubResource( 8 )
+
+[node name="CSGMesh12" type="CSGMesh" parent="."]
+transform = Transform( 0.827835, 0, -0.560971, 0, 1, 0, 0.560971, 0, 0.827835, 187.019, 0, 89.5703 )
+use_collision = true
+mesh = SubResource( 8 )
+
+[node name="CSGMesh8" type="CSGMesh" parent="."]
+transform = Transform( 0.827835, 0, -0.560971, 0, 1, 0, 0.560971, 0, 0.827835, 118.047, 0, 193.175 )
+use_collision = true
+mesh = SubResource( 8 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 0.827835, 0, -0.560971, 0, 1, 0, 0.560971, 0, 0.827835, 98.5542, 3.27339, -28.5299 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 9 )
+
+[node name="CSGMesh" type="CSGMesh" parent="Area/CollisionShape"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+mesh = SubResource( 10 )
+material = SubResource( 11 )
+
+[connection signal="body_entered" from="Area" to="car" method="_on_Area_body_entered"]
