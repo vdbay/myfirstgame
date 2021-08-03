@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/rumah/sushi.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/rumah/pohon1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/rumah/pohon2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://fonts/Facon.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://level.gd" type="Script" id=14]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.12549, 1, 0, 1 )
@@ -20,7 +22,7 @@ albedo_color = Color( 0.12549, 1, 0, 1 )
 material = SubResource( 1 )
 size = Vector3( 1000, 2, 1000 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=3]
 resource_name = "enemyanim"
 length = 120.0
 tracks/0/type = "value"
@@ -48,18 +50,18 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 56.484, 0 ), Vector3( 0, 56.484, 0 ), Vector3( 0, -33.347, 0 ), Vector3( 0, -30.6385, 0 ), Vector3( 0, -123.02, 0 ), Vector3( 0, -126.775, 0 ), Vector3( 0, -32.4153, 0 ), Vector3( 0, -32.4151, 0 ), Vector3( 0, 57.8367, 0 ), Vector3( 0, 57.6717, 0 ), Vector3( 0, -35.3845, 0 ), Vector3( 0, -31.5299, 0 ), Vector3( 0, -125.775, 0 ), Vector3( 0, -124.778, 0 ), Vector3( 0, -32.838, 0 ), Vector3( 0, -34.9897, 0 ), Vector3( 0, 50.5485, 0 ), Vector3( 0, 51.6477, 0 ), Vector3( 0, -30.6614, 0 ), Vector3( 0, -24.6514, 0 ), Vector3( 0, -130.096, 0 ), Vector3( 0, -131.472, 0 ), Vector3( 0, -34.8122, 0 ), Vector3( 0, -25.5278, 0 ), Vector3( 0, 58.9786, 0 ), Vector3( 0, 58.0191, 0 ), Vector3( 0, -32.7508, 0 ), Vector3( 0, -35.6926, 0 ), Vector3( 0, -128.753, 0 ), Vector3( 0, -124.487, 0 ), Vector3( 0, -34.1983, 0 ), Vector3( 0, -35.4643, 0 ), Vector3( 0, 51.6164, 0 ), Vector3( 0, 56.484, 0 ) ]
 }
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 metallic = 0.54
 
-[sub_resource type="CubeMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
 size = Vector3( 300, 2, 2 )
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="CubeMesh" id=6]
 size = Vector3( 150, 1, 2 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="CubeMesh" id=8]
@@ -73,7 +75,12 @@ extents = Vector3( 5, 5, 5 )
 [sub_resource type="SpatialMaterial" id=11]
 albedo_color = Color( 0, 0.0862745, 1, 0.376471 )
 
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 13 )
+
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 14 )
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02, 0 )
@@ -86,7 +93,7 @@ script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="car2"]
 autoplay = "enemyanim"
-anims/enemyanim = SubResource( 12 )
+anims/enemyanim = SubResource( 3 )
 
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
 transform = Transform( 0.635526, 0, 0.77208, 0, 1, 0, -0.77208, 0, 0.635526, 83.358, 12, 277.726 )
@@ -100,6 +107,9 @@ script = ExtResource( 2 )
 
 [node name="Spatial" type="Spatial" parent="car"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5 )
+
+[node name="Camera" type="Camera" parent="car"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.911805, 0 )
 
 [node name="jalan" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0222625, -0.3, 0.419037 )
@@ -215,22 +225,22 @@ transform = Transform( 2.70377, 0, 4.2059, 0, 5, 0, -4.2059, 0, 2.70377, 166.955
 [node name="CSGMesh2" type="CSGMesh" parent="."]
 transform = Transform( 0.552519, 0, 0.8335, 0, 1, 0, -0.8335, 0, 0.552519, 12.8088, 0.9445, 82.833 )
 use_collision = true
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 
 [node name="CSGMesh4" type="CSGMesh" parent="."]
 transform = Transform( 0.8335, 0, -0.552519, 0, 1, 0, 0.552519, 0, 0.8335, 116.788, 0.9445, -23.8727 )
 use_collision = true
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 
 [node name="CSGMesh5" type="CSGMesh" parent="."]
 transform = Transform( 0.8335, 0, -0.552519, 0, 1, 0, 0.552519, 0, 0.8335, -30.4186, 0.9445, 208.621 )
 use_collision = true
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 
 [node name="CSGMesh3" type="CSGMesh" parent="."]
 transform = Transform( 0.552519, 0, 0.8335, 0, 1, 0, -0.8335, 0, 0.552519, 149.891, 0.9445, 175.908 )
 use_collision = true
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.928895, -0.359638, -0.0883999, 0.242479, -0.771026, 0.588832, -0.279925, 0.525528, 0.803407, 83.6757, 97.9723, 0 )
@@ -240,26 +250,26 @@ shadow_enabled = true
 [node name="CSGMesh6" type="CSGMesh" parent="."]
 transform = Transform( 0.838671, 0, -0.544639, 0, 1.5, 0, 0.544639, 0, 0.838671, 20.01, 0.5, 232.118 )
 use_collision = true
-mesh = SubResource( 7 )
-material = SubResource( 6 )
+mesh = SubResource( 6 )
+material = SubResource( 7 )
 
 [node name="CSGMesh9" type="CSGMesh" parent="."]
 transform = Transform( 0.838671, 0, -0.544639, 0, 1.5, 0, 0.544639, 0, 0.838671, 70.5648, 0.5, 135.244 )
 use_collision = true
-mesh = SubResource( 7 )
-material = SubResource( 6 )
+mesh = SubResource( 6 )
+material = SubResource( 7 )
 
 [node name="CSGMesh10" type="CSGMesh" parent="."]
 transform = Transform( 0.817859, 0, -0.575419, 0, 1.5, 0, 0.575419, 0, 0.817859, 95.735, 0.5, 119.466 )
 use_collision = true
-mesh = SubResource( 7 )
-material = SubResource( 6 )
+mesh = SubResource( 6 )
+material = SubResource( 7 )
 
 [node name="CSGMesh13" type="CSGMesh" parent="."]
 transform = Transform( 0.827786, 0, -0.561044, 0, 1.5, 0, 0.561044, 0, 0.827786, 141.223, 0.5, 33.0901 )
 use_collision = true
-mesh = SubResource( 7 )
-material = SubResource( 6 )
+mesh = SubResource( 6 )
+material = SubResource( 7 )
 
 [node name="CSGMesh7" type="CSGMesh" parent="."]
 transform = Transform( 0.827835, 0, -0.560971, 0, 1, 0, 0.560971, 0, 0.827835, -12.8392, 0, 152.308 )
@@ -292,4 +302,19 @@ transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 mesh = SubResource( 10 )
 material = SubResource( 11 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 1031.88
+margin_top = 10.0794
+margin_right = 1271.88
+margin_bottom = 47.0794
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+text = "CHANGE VIEW"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="body_entered" from="Area" to="car" method="_on_Area_body_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
